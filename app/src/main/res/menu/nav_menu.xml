@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/search"
+        android:title="@string/search"
+        android:enabled="true"
+        android:icon="@drawable/ic_bottom_search_selector"/>
+
+    <item android:id="@+id/favourite"
+        android:enabled="true"
+        android:title="@string/favourite"
+        android:icon="@drawable/ic_bottom_favourite_selector"/>
+
+    <item android:id="@+id/widget"
+        android:enabled="true"
+        android:title="@string/widget"
+        android:icon="@drawable/ic_bottom_widget_selector"/>
+
+    <item android:id="@+id/history"
+        android:enabled="true"
+        android:title="@string/history"
+        android:icon="@drawable/ic_bottom_history_selector"/>
+</menu>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_height">56dp</dimen>
+    <dimen name="fragment_container_bottom_margin">20dp</dimen>
+
+    <!-- dp -->
+    <dimen name="dp_0.01x">1dp</dimen>
+    <dimen name="dp_0.25x">2dp</dimen>
+    <dimen name="dp_0.5x">4dp</dimen>
+    <dimen name="dp_0.75x">6dp</dimen>
+    <dimen name="dp_1x">8dp</dimen>
+    <dimen name="dp_1.25x">10dp</dimen>
+    <dimen name="dp_1.5x">12dp</dimen>
+    <dimen name="dp_1.75x">14dp</dimen>
+    <dimen name="dp_2x">16dp</dimen>
+    <dimen name="dp_2.25x">18dp</dimen>
+    <dimen name="dp_2.5x">20dp</dimen>
+    <dimen name="dp_2.75x">22dp</dimen>
+    <dimen name="dp_2.875x">23dp</dimen>
+    <dimen name="dp_3x">24dp</dimen>
+    <dimen name="dp_3.25x">26dp</dimen>
+    <dimen name="dp_3.5x">28dp</dimen>
+    <dimen name="dp_3.75x">30dp</dimen>
+    <dimen name="dp_4x">32dp</dimen>
+    <dimen name="dp_4.25x">34dp</dimen>
+    <dimen name="dp_4.5x">36dp</dimen>
+    <dimen name="dp_4.75x">38dp</dimen>
+    <dimen name="dp_5x">40dp</dimen>
+    <dimen name="dp_5.25x">42dp</dimen>
+    <dimen name="dp_5.5x">44dp</dimen>
+    <dimen name="dp_5.75x">46dp</dimen>
+    <dimen name="dp_6x">48dp</dimen>
+    <dimen name="dp_7x">56dp</dimen>
+    <dimen name="dp_8x">64dp</dimen>
+    <dimen name="dp_10.25x">82dp</dimen>
+    <dimen name="dp_10x">100dp</dimen>
+    <dimen name="dp_6.5x">52dp</dimen>
+
+
+    <dimen name="medium_radius">16dp</dimen>
+    <dimen name="bottom_nav_height">56dp</dimen>
+    <dimen name="container_view_padding_if_bottom_nav_visible">40dp
+    </dimen>
+    <dimen name="margin_medium">16dp</dimen>
+    <dimen name="profile_image_round">52dp</dimen>
+    <dimen name="sp_3x">24sp</dimen>
+
+
+    //home
+    <dimen name="home_dark_blue_container_195dp">195dp</dimen>
+    <dimen name="tab_layout_height">44dp</dimen>
+
+
+    <!-- sp -->
+    <dimen name="scale">8sp</dimen>
+    <dimen name="scale_1.80x">11sp</dimen>
+    <dimen name="scale_1.5x">12sp</dimen>
+    <dimen name="scale_1.625x">13sp</dimen>
+    <dimen name="scale_1.75x">14sp</dimen>
+    <dimen name="scale_1.875x">15sp</dimen>
+    <dimen name="scale_2x">16sp</dimen>
+    <dimen name="scale_2.25x">18sp</dimen>
+    <dimen name="scale_2.5x">20sp</dimen>
+    <dimen name="scale_2.75x">22sp</dimen>
+    <dimen name="scale_3x">24sp</dimen>
+    <dimen name="scale_4.5x">36sp</dimen>
+
+    <dimen name="spacing_large_24">24dp</dimen>
+    <dimen name="spacing_normal_16">16dp</dimen>
+    <dimen name="font_normal_16">16sp</dimen>
+    <dimen name="spacing_small_8">8dp</dimen>
+    <dimen name="corner_size_small">8dp</dimen>
+    <dimen name="corner_size_medium">10dp</dimen>
+    <dimen name="corner_size_big">14dp</dimen>
+
+    <dimen name="font_large_24">24sp</dimen>
+    <dimen name="font_large_20">20sp</dimen>
+    <dimen name="font_small_12">12sp</dimen>
+
+    <dimen name="spacing_huge_32">32dp</dimen>
+    <dimen name="spacing_tiny_4">4dp</dimen>
+</resources>
