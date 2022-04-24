@@ -13,7 +13,6 @@ import kg.lugatdictionary.ui.utils.base.BaseActivity
 import kg.lugatdictionary.vm.MainVM
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-
 class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
 
     private val viewModel: MainVM by viewModel()
@@ -23,7 +22,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
             R.id.fragment_container_view
         ) as NavHostFragment
     }
-
 
     private val listener =
         NavController.OnDestinationChangedListener { _, dest, _ ->
@@ -48,7 +46,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
     private fun initListeners() {
 
     }
-
 
     private fun setupNavigation() {
         NavigationUI.setupWithNavController(
