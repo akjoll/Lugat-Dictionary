@@ -64,6 +64,8 @@
     <style name="Widget.MaterialComponents.BottomNavigationView.LugatDictionary">
         <item name="itemIconTint">@color/bottom_nav_item_color</item>
         <item name="itemTextColor">@color/bottom_nav_item_color</item>
+        <item name="fontFamily">@font/inter_medium</item>
+        <item name="android:textSize">11sp</item>
     </style>
 
     <style name="Widget.MaterialComponents.Snackbar.LugatDictionary">
