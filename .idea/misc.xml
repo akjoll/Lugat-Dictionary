@@ -9,12 +9,18 @@
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_bottom_history_selector.xml" value="0.114" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_bottom_search_selector.xml" value="0.114" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_bottom_widget_selector.xml" value="0.114" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_favourite_default.xml" value="0.114" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_favourite_pressed.xml" value="0.114" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/ic_search_default.xml" value="0.114" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/search_bg.xml" value="0.114" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/drawable/search_toolbar_bg.xml" value="0.114" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/fragment_favourite.xml" value="0.2" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/fragment_history.xml" value="0.2" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/fragment_search.xml" value="0.2" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/fragment_widget.xml" value="0.2" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/layout_progress.xml" value="0.2" />
+        <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/layout/layout_search_toolbar.xml" value="0.67" />
         <entry key="..\:/Users/Kanat/AndroidStudioProjects/LugatDictionary/app/src/main/res/menu/nav_menu.xml" value="0.1685185185185185" />
       </map>
     </option>
