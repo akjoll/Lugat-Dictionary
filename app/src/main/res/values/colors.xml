@@ -15,5 +15,16 @@
     <color name="athens_gray">#F7F8F9</color>
     <color name="bali_hai">#8D99AE</color>
     <color name="ebony_clay">#2B2D42</color>
+
+    <color name="colorPrimary">#252D70</color>
+    <color name="colorSecondary">#173565</color>
+    <color name="colorTextPrimary">#605C5C</color>
+    <color name="colorTextSecondary">#FFFFFF</color>
+    <color name="colorOnSurface">#F1F3F3</color>
+    <color name="colorDivider">#B6BFDC</color>
+    <color name="hintColor">#888888</color>
+
+    <color name="bottom_icon_unchecked_color">#8B96B1</color>
+    <color name="bottom_icon_checked_color">#294166</color>
 </resources>
 
