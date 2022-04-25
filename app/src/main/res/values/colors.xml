@@ -25,7 +25,7 @@
     <color name="colorDivider">#B6BFDC</color>
     <color name="hintColor">#888888</color>
     <color name="colorOnSearch">#EDF0F1</color>
-
+    <color name="beruzoviy">#D9EFF3</color>
     <color name="bottom_icon_unchecked_color">#8B96B1</color>
     <color name="bottom_icon_checked_color">#294166</color>
 </resources>
