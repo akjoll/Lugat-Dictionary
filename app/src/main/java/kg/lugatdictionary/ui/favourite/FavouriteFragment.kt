@@ -7,6 +7,8 @@ import kg.lugatdictionary.ui.utils.base.BaseFragment
 class FavouriteFragment: BaseFragment<FragmentFavouriteBinding>() {
     override fun inflateBinding(inflater: LayoutInflater) = FragmentFavouriteBinding.inflate(inflater)
 
+
+
     override fun init() {
 
     }
