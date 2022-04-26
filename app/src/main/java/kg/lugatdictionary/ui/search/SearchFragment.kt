@@ -13,7 +13,8 @@ class SearchFragment: BaseFragment<FragmentSearchBinding>(), WordsListeners {
 
     override fun init() {
         binding.rvWords.adapter=adapter
-        val words= listOf<Word>(Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
+        val words= listOf<Word>(
+            Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
             Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
             Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
             Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"))
