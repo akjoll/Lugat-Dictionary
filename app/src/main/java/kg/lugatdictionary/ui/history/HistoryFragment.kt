@@ -12,6 +12,7 @@ class HistoryFragment: BaseFragment<FragmentHistoryBinding>(),HistoryListener {
     private val adapter by lazy { HistoryAdapter(this) }
 
     override fun init() {
+        binding.inclToolbar.tvTitle.text = getString(R.string.history)
         binding.rvHistory.adapter=adapter
         val words= listOf<Word>(
             Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
