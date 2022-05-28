@@ -3,7 +3,7 @@ package kg.lugatdictionary.ui.history
 import android.view.LayoutInflater
 import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.FragmentHistoryBinding
-import kg.lugatdictionary.domain.Word
+import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseFragment
 import kg.lugatdictionary.ui.utils.extensions.snackbar
 
@@ -15,10 +15,10 @@ class HistoryFragment: BaseFragment<FragmentHistoryBinding>(),HistoryListener {
         binding.inclToolbar.tvTitle.text = getString(R.string.history)
         binding.rvHistory.adapter=adapter
         val words= listOf<Word>(
-            Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word("Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук")
+            Word(0, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
+            Word(1, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
+            Word(2, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
+            Word(3, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук")
         )
         adapter.setData(words)
     }

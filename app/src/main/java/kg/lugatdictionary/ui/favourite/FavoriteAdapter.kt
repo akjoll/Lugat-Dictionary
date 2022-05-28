@@ -3,7 +3,7 @@ package kg.lugatdictionary.ui.favourite
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import kg.lugatdictionary.databinding.ItemFavoriteBinding
-import kg.lugatdictionary.domain.Word
+import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseAdapter
 
 class FavoriteAdapter(private val listeners:FavoriteListeners):

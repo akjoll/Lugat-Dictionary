@@ -1,5 +1,6 @@
 package kg.lugatdictionary.ui.utils.extensions
 
+import android.app.Activity
 import android.view.View
 import androidx.activity.addCallback
 import androidx.annotation.StringRes
@@ -9,6 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -62,10 +65,12 @@ fun <T> Fragment.setNavigationResult(
     )
 }
 
-fun Fragment.withLifecycleScope(fn: suspend () -> Unit){
+fun <T> Fragment.withLifecycleScope(flow: Flow<T>, fn: suspend (T) -> Unit){
     viewLifecycleOwner.lifecycleScope.launch {
         viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
-            fn.invoke()
+            flow.collect {
+                fn.invoke(it)
+            }
         }
     }
 }

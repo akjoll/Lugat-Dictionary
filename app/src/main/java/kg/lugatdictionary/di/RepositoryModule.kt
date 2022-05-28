@@ -5,5 +5,5 @@ import kg.lugatdictionary.domain.repository.MainRepo
 import org.koin.dsl.module
 
 val repositoryModule = module {
-    single<MainRepo> { MainRepoImpl(get(), get()) }
+    single<MainRepo> { MainRepoImpl(get(), get(), get()) }
 }

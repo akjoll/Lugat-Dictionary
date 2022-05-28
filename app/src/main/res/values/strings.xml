@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Лугат сөздүгү</string>
+    <string name="app_name">Түркчө-Кыргызча Лугат</string>
     <string name="no_internet">Интернет жок</string>
     <string name="server_error">Серверде ката чыкты</string>
     <string name="search">Издөө</string>

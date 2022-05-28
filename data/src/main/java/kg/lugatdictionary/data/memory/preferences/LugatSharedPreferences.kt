@@ -1,4 +1,4 @@
-package kg.lugatdictionary.data.memory
+package kg.lugatdictionary.data.memory.preferences
 
 import android.content.SharedPreferences
 

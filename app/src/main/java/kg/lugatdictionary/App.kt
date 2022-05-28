@@ -13,10 +13,11 @@ class App: Application() {
             androidContext(this@App)
             modules(listOf(
                 apiServiceModule,
+                databaseModule,
                 useCaseModule,
                 repositoryModule,
                 viewModelModule,
-                utilsModule
+                utilsModule,
             ))
         }
 

@@ -3,7 +3,7 @@ package kg.lugatdictionary.ui.history
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import kg.lugatdictionary.databinding.ItemsHistoryBinding
-import kg.lugatdictionary.domain.Word
+import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseAdapter
 
 class HistoryAdapter(private val listener:HistoryListener):BaseAdapter<Word,ItemsHistoryBinding,HistoryViewHolder>() {
