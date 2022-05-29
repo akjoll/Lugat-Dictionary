@@ -1,5 +1,6 @@
 package kg.lugatdictionary.data.memory.db
 
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import kg.lugatdictionary.data.memory.db.daos.LugatDictDao

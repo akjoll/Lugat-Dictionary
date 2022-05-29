@@ -1,29 +1,56 @@
 package kg.lugatdictionary.ui.history
 
+import android.util.Log
 import android.view.LayoutInflater
 import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.FragmentHistoryBinding
 import kg.lugatdictionary.domain.entities.Word
+import kg.lugatdictionary.ui.favourite.WordListeners
 import kg.lugatdictionary.ui.utils.base.BaseFragment
+import kg.lugatdictionary.ui.utils.base.BaseVMFragment
 import kg.lugatdictionary.ui.utils.extensions.snackbar
+import kg.lugatdictionary.ui.utils.extensions.withLifecycleScope
+import kg.lugatdictionary.ui.word_detail.WordDetailBottomSheetFragment
+import kg.lugatdictionary.vm.HistoryVM
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HistoryFragment: BaseFragment<FragmentHistoryBinding>(),HistoryListener {
+class HistoryFragment : BaseVMFragment<FragmentHistoryBinding, HistoryVM>(), WordListeners {
+    override val viewModel: HistoryVM by viewModel()
     override fun inflateBinding(inflater: LayoutInflater) = FragmentHistoryBinding.inflate(inflater)
+
     private val adapter by lazy { HistoryAdapter(this) }
 
     override fun init() {
-        binding.inclToolbar.tvTitle.text = getString(R.string.history)
-        binding.rvHistory.adapter=adapter
-        val words= listOf<Word>(
-            Word(0, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word(1, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word(2, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук"),
-            Word(3, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук")
-        )
-        adapter.setData(words)
+        initToolbar()
+        initRV()
+        initObservers()
+        initRequests()
     }
 
-    override fun onWordClicked(position: Int, title: String) {
-        snackbar("Clicked $position $title")
+    private fun initRequests() {
+        viewModel.getHistories()
     }
+
+    private fun initObservers() = with(viewModel) {
+        withLifecycleScope(histories){
+            adapter.setData(it)
+        }
+    }
+
+    private fun initRV() {
+        binding.rvHistory.adapter = adapter
+    }
+
+    private fun initToolbar() {
+        binding.inclToolbar.tvTitle.text = getString(R.string.history)
+    }
+
+    override fun onWordClicked(word: Word) {
+        WordDetailBottomSheetFragment(word).show(childFragmentManager, null)
+    }
+
+    override fun deleteWord(word: Word) {
+        viewModel.deleteHistory(word)
+    }
+
 }

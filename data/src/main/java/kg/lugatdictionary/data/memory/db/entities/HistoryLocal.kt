@@ -2,10 +2,8 @@ package kg.lugatdictionary.data.memory.db.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kg.lugatdictionary.data.utils.FavoriteLocalTableName
 import kg.lugatdictionary.data.utils.HistoryLocalTableName
 import kg.lugatdictionary.domain.entities.Word
-import java.sql.Date
 
 @Entity(tableName = HistoryLocalTableName)
 data class HistoryLocal(
@@ -17,6 +15,13 @@ data class HistoryLocal(
 )
 
 fun HistoryLocal.toWord() = Word(
+    id = id,
+    word = word,
+    explanation = explanation,
+    date = date
+)
+
+fun Word.toHistoryLocal() = HistoryLocal(
     id = id,
     word = word,
     explanation = explanation,

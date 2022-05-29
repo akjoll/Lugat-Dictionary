@@ -4,14 +4,18 @@ import kg.lugatdictionary.databinding.ItemFavoriteBinding
 import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseVH
 
-class FavoriteViewHolder(binding: ItemFavoriteBinding, private val listeners: FavoriteListeners,):BaseVH<Word,ItemFavoriteBinding>(binding) {
+class FavoriteViewHolder(binding: ItemFavoriteBinding, private val listeners: WordListeners,):BaseVH<Word,ItemFavoriteBinding>(binding) {
     override fun bind(item: Word) {
         with(binding){
             tvTransalteOfWord.text=item.word
             tvExplanationOfTranslate.text=item.explanation
 
-            itemView.setOnClickListener(){
-                listeners.onWordClicked(absoluteAdapterPosition,item.word)
+            itemView.setOnClickListener{
+                listeners.onWordClicked(item)
+            }
+
+            iconDelete.setOnClickListener {
+                listeners.deleteWord(item)
             }
         }
     }

@@ -2,7 +2,6 @@ package kg.lugatdictionary.data.memory.db.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import kg.lugatdictionary.data.utils.FavoriteLocalTableName
 import kg.lugatdictionary.data.utils.WidgetLocalTableName
 import kg.lugatdictionary.domain.entities.Word
 
@@ -15,6 +14,12 @@ data class WidgetLocal(
 )
 
 fun WidgetLocal.toWord() = Word(
+    id = id,
+    word = word,
+    explanation = explanation
+)
+
+fun Word.toWidgetLocal() = WidgetLocal(
     id = id,
     word = word,
     explanation = explanation

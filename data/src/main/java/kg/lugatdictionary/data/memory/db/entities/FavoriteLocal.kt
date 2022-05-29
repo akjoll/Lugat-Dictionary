@@ -18,3 +18,9 @@ fun FavoriteLocal.toWord() = Word(
     word = word,
     explanation = explanation
 )
+
+fun Word.toFavoriteLocal() = FavoriteLocal(
+    id = id,
+    word = word,
+    explanation = explanation
+)

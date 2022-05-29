@@ -1,23 +1,27 @@
 package kg.lugatdictionary.ui.search
 
-import android.util.Log
 import android.view.LayoutInflater
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.lifecycleScope
 import kg.lugatdictionary.databinding.FragmentSearchBinding
 import kg.lugatdictionary.domain.entities.Word
+import kg.lugatdictionary.ui.favourite.WordListeners
 import kg.lugatdictionary.ui.utils.Timer
-import kg.lugatdictionary.ui.utils.base.BaseFragment
 import kg.lugatdictionary.ui.utils.base.BaseVMFragment
-import kg.lugatdictionary.ui.utils.extensions.snackbar
 import kg.lugatdictionary.ui.utils.extensions.withLifecycleScope
+import kg.lugatdictionary.ui.utils.getDate
+import kg.lugatdictionary.ui.word_detail.WordDetailBottomSheetFragment
+import kg.lugatdictionary.vm.LaunchVM
 import kg.lugatdictionary.vm.SearchVM
-import kotlinx.coroutines.flow.collect
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.time.LocalDate
+import java.util.*
 
-class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordsListeners {
+class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordListeners {
     override val viewModel: SearchVM by viewModel()
     private val timer by lazy { Timer(lifecycleScope, this::search) }
+
+    private val saveVieModel: LaunchVM by viewModel()
 
     override fun inflateBinding(inflater: LayoutInflater) = FragmentSearchBinding.inflate(inflater)
 
@@ -28,6 +32,14 @@ class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordsLi
         initListeners()
         initObservers()
         search()
+
+        val items = listOf<Word>(
+            Word(0, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук 2.Не дей аласын"),
+            Word(1, "Backr","1.Түбөлүктүүлүк, чексиздик, соңсуздук бакр"),
+            Word(2, "Cigitter","1.Түбөлүктүүлүк, чексиздик, соңсуздук жигиттер"),
+            Word(3, "Dogs","1.Түбөлүктүүлүк, чексиздик, соңсуздук иттер")
+        )
+        saveVieModel.saveWords(items)
     }
 
     private fun initRV() {
@@ -52,7 +64,13 @@ class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordsLi
         }
     }
 
-    override fun onWordClicked(position: Int, title: String) {
-        snackbar("Clicked $position $title")
+    override fun onWordClicked(word: Word) {
+        WordDetailBottomSheetFragment(word).show(childFragmentManager, null)
+        word.date = getDate()
+        viewModel.insertHistory(word)
+    }
+
+    override fun deleteWord(word: Word) {
+
     }
 }

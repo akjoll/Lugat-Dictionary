@@ -10,24 +10,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Abad"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:textColor="?colorPrimary"
         android:textAppearance="?textAppearanceBody1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="@dimen/dp_2x"
+        android:layout_marginHorizontal="@dimen/dp_2x"
         android:layout_marginTop="@dimen/dp_1.5x"
         >
     </TextView>
     <TextView
         android:id="@+id/tv_explanationOfTranslate"
         android:layout_width="0dp"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:layout_height="wrap_content"
         tools:text="translate"
         android:textColor="?android:textColorPrimary"
         android:textAppearance="?textAppearanceBody2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_transalte_of_word"
-        android:layout_marginStart="@dimen/dp_2x"
+        android:layout_marginHorizontal="@dimen/dp_2x"
         android:layout_marginTop="@dimen/dp_1x"
         />
     <ImageView
@@ -35,10 +39,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_clear"
-        app:layout_constraintBottom_toTopOf="@id/tv_explanationOfTranslate"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/dp_2x"
         android:layout_marginEnd="@dimen/dp_0.5x"/>
     <View
         android:layout_width="wrap_content"
