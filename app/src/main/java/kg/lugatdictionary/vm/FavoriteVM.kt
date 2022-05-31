@@ -1,5 +1,6 @@
 package kg.lugatdictionary.vm
 
+import android.util.Log
 import androidx.lifecycle.viewModelScope
 import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.domain.usecases.DeleteFavoriteUC
@@ -8,6 +9,8 @@ import kg.lugatdictionary.domain.utils.BaseUseCase
 import kg.lugatdictionary.vm.utils.base.BaseVM
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 open class FavoriteVM(
     private val getFavoritesUC: GetFavoritesUC,
@@ -25,7 +28,9 @@ open class FavoriteVM(
 
     fun deleteWord(word: Word){
         deleteFavoriteUC(word, viewModelScope){
-            getFavorites()
+            viewModelScope.launch {
+                it.collect { getFavorites() }
+            }
         }
     }
 }

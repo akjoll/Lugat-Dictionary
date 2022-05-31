@@ -8,6 +8,8 @@ import kg.lugatdictionary.domain.utils.BaseUseCase
 import kg.lugatdictionary.vm.utils.base.BaseVM
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 class HistoryVM(
     private val getHistoriesUC: GetHistoriesUC,
@@ -25,7 +27,9 @@ class HistoryVM(
 
     fun deleteHistory(word: Word) {
         deleteHistoryUC(word, viewModelScope){
-            getHistories()
+            viewModelScope.launch {
+                it.collect { getHistories() }
+            }
         }
     }
 

@@ -28,5 +28,9 @@
     <color name="beruzoviy">#D9EFF3</color>
     <color name="bottom_icon_unchecked_color">#8B96B1</color>
     <color name="bottom_icon_checked_color">#294166</color>
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 </resources>
 

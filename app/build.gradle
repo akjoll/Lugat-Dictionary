@@ -38,7 +38,6 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.1.0-beta03"
         // 1.5.31 kotlin version and 1.1.1 compose version -> nado vynesti ih
-        kotlinCompilerVersion "1.5.31"
         kotlinCompilerExtensionVersion "1.1.1"
     }
 }

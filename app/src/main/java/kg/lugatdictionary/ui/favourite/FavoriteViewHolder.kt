@@ -10,13 +10,13 @@ class FavoriteViewHolder(binding: ItemFavoriteBinding, private val listeners: Wo
             tvTransalteOfWord.text=item.word
             tvExplanationOfTranslate.text=item.explanation
 
+            iconDelete.setOnClickListener {
+                listeners.deleteWord(item)
+            }
             itemView.setOnClickListener{
                 listeners.onWordClicked(item)
             }
 
-            iconDelete.setOnClickListener {
-                listeners.deleteWord(item)
-            }
         }
     }
 

@@ -8,6 +8,8 @@ import kg.lugatdictionary.domain.utils.BaseUseCase
 import kg.lugatdictionary.vm.utils.base.BaseVM
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 open class WidgetVM(
     private val getWidgetsUC: GetWidgetsUC,
@@ -25,7 +27,9 @@ open class WidgetVM(
 
     fun deleteWidget(word: Word){
         deleteWidgetUC(word, viewModelScope){
-            getWidgets()
+            viewModelScope.launch {
+                it.collect { getWidgets() }
+            }
         }
     }
 

@@ -32,7 +32,6 @@ class SearchVM(
 
     fun insertHistory(word: Word){
         insertHistoryUC(word, viewModelScope){
-            Log.e("histroyInsert", word.toString())
             it.collectResponse(_insertedHistory)
         }
     }

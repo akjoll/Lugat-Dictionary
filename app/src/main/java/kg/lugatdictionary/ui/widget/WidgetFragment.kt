@@ -1,6 +1,10 @@
 package kg.lugatdictionary.ui.widget
 
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
+import android.content.Intent
 import android.view.LayoutInflater
+import kg.lugatdictionary.LugatWidget
 import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.FragmentWidgetBinding
 import kg.lugatdictionary.domain.entities.Word
@@ -8,6 +12,7 @@ import kg.lugatdictionary.ui.favourite.WordListeners
 import kg.lugatdictionary.ui.utils.base.BaseFragment
 import kg.lugatdictionary.ui.utils.base.BaseVMFragment
 import kg.lugatdictionary.ui.utils.extensions.snackbar
+import kg.lugatdictionary.ui.utils.extensions.updateAppWidget
 import kg.lugatdictionary.ui.utils.extensions.withLifecycleScope
 import kg.lugatdictionary.ui.word_detail.WordDetailBottomSheetFragment
 import kg.lugatdictionary.vm.WidgetVM
@@ -32,6 +37,7 @@ class WidgetFragment: BaseVMFragment<FragmentWidgetBinding, WidgetVM>(), WordLis
     private fun initObservers() = with(viewModel) {
         withLifecycleScope(words){
             adapter.setData(it)
+            updateAppWidget()
         }
     }
 

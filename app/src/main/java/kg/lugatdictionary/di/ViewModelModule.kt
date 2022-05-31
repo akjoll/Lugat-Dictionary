@@ -12,5 +12,5 @@ val viewModelModule = module {
     viewModel { WidgetVM(get(), get()) }
     viewModel { FavoriteVM(get(), get()) }
     viewModel { HistoryVM(get(), get()) }
-    viewModel { parameters -> WordDetailVM(word = parameters.get(), get(), get(), get(), get(), get(), get()) }
+    viewModel { parameters -> WordDetailVM(word = parameters.get(), get(), get(), get(), get(), get(), get(), get()) }
 }

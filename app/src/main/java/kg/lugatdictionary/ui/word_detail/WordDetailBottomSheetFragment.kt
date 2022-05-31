@@ -5,6 +5,7 @@ import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.BottomSheetWordDetailBinding
 import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseBottomSheetVMFragment
+import kg.lugatdictionary.ui.utils.extensions.updateAppWidget
 import kg.lugatdictionary.ui.utils.extensions.withLifecycleScope
 import kg.lugatdictionary.vm.WordDetailVM
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -24,11 +25,11 @@ class WordDetailBottomSheetFragment(private val word: Word) : BaseBottomSheetVMF
 
     private fun initObservers() = with(viewModel) {
         withLifecycleScope(isFavorite){
-            binding.ivFavorite.setImageResource(if (it) R.drawable.ic_favourite_pressed else R.drawable.ic_favourite_default )
+            binding.ivFavorite.setImageResource(if (it) R.drawable.ic_star_pressed else R.drawable.ic_favourite_default )
         }
 
         withLifecycleScope(isWidget){
-            binding.ivWidget.setImageResource(if (it) R.drawable.ic_widget_pressed else R.drawable.ic_widget_default )
+            binding.ivWidget.setImageResource(if (it) R.drawable.ic_widget_pressed_black else R.drawable.ic_widget_default )
         }
     }
 
@@ -53,6 +54,7 @@ class WordDetailBottomSheetFragment(private val word: Word) : BaseBottomSheetVMF
             else
                 viewModel.insertWidget()
         }
+        updateAppWidget()
     }
 
     private fun setUpUI() = with(binding) {

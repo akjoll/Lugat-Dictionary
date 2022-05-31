@@ -1,5 +1,6 @@
 package kg.lugatdictionary.ui.favourite
 
+import android.util.Log
 import android.view.LayoutInflater
 import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.FragmentFavouriteBinding
