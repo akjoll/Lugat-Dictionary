@@ -21,7 +21,7 @@ interface LugatDictDao {
     @Query("SELECT * from $WordLocalTableName")
     fun getWords(): Flow<List<WordLocal>>
 
-    @Query("SELECT * from $WordLocalTableName WHERE word LIKE '%' || :searchText || '%' OR explanation LIKE '%' || :searchText || '%'")
+    @Query("SELECT * from $WordLocalTableName WHERE word LIKE :searchText || '%' ORDER BY word")
     fun getWordsBySearch(searchText: String): Flow<List<WordLocal>>
 
     @Query("SELECT * from $FavoriteLocalTableName")

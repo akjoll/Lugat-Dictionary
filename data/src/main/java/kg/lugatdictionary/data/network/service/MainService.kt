@@ -9,6 +9,6 @@ import retrofit2.http.GET
  */
 interface MainService {
 
-    @GET("project")
+    @GET("project/")
     suspend fun getWords(): Response<List<WordResponse>>
 }

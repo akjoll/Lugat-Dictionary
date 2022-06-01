@@ -33,13 +33,13 @@ class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordLis
         initObservers()
         search()
 
-        val items = listOf<Word>(
-            Word(0, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук 2.Не дей аласын"),
-            Word(1, "Backr","1.Түбөлүктүүлүк, чексиздик, соңсуздук бакр"),
-            Word(2, "Cigitter","1.Түбөлүктүүлүк, чексиздик, соңсуздук жигиттер"),
-            Word(3, "Dogs","1.Түбөлүктүүлүк, чексиздик, соңсуздук иттер")
-        )
-        saveVieModel.saveWords(items)
+//        val items = listOf<Word>(
+//            Word(0, "Abad","1.Түбөлүктүүлүк, чексиздик, соңсуздук 2.Не дей аласын"),
+//            Word(1, "Backr","1.Түбөлүктүүлүк, чексиздик, соңсуздук бакр"),
+//            Word(2, "Cigitter","1.Түбөлүктүүлүк, чексиздик, соңсуздук жигиттер"),
+//            Word(3, "Dogs","1.Түбөлүктүүлүк, чексиздик, соңсуздук иттер")
+//        )
+//        saveVieModel.saveWords(items)
     }
 
     private fun initRV() {

@@ -3,6 +3,7 @@ package kg.lugatdictionary.ui.launch
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.lifecycle.Observer
 import androidx.lifecycle.viewModelScope
 import kg.lugatdictionary.databinding.ActivityLauncherBinding
 import kg.lugatdictionary.ui.MainActivity
@@ -38,15 +39,23 @@ class LaunchActivity: BaseActivity<ActivityLauncherBinding>() {
 
         viewModelScope.launch {
             successWordUpdate.collect {
-                val intent = Intent(this@LaunchActivity, MainActivity::class.java)
-                intent.addFlags(
-                    Intent.FLAG_ACTIVITY_CLEAR_TOP or
-                            Intent.FLAG_ACTIVITY_CLEAR_TASK or
-                            Intent.FLAG_ACTIVITY_NEW_TASK
-                )
-                startActivity(intent)
+                startMainActivity()
             }
         }
 
+        failureLD.observe(this@LaunchActivity, Observer {
+            startMainActivity()
+        })
+
+    }
+
+    private fun startMainActivity() {
+        val intent = Intent(this@LaunchActivity, MainActivity::class.java)
+        intent.addFlags(
+            Intent.FLAG_ACTIVITY_CLEAR_TOP or
+                    Intent.FLAG_ACTIVITY_CLEAR_TASK or
+                    Intent.FLAG_ACTIVITY_NEW_TASK
+        )
+        startActivity(intent)
     }
 }

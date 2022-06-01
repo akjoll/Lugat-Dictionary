@@ -1,10 +1,12 @@
 package kg.lugatdictionary.ui.word_detail
 
 import android.view.LayoutInflater
+import android.widget.Toast
 import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.BottomSheetWordDetailBinding
 import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.ui.utils.base.BaseBottomSheetVMFragment
+import kg.lugatdictionary.ui.utils.extensions.snackbar
 import kg.lugatdictionary.ui.utils.extensions.updateAppWidget
 import kg.lugatdictionary.ui.utils.extensions.withLifecycleScope
 import kg.lugatdictionary.vm.WordDetailVM
@@ -30,6 +32,10 @@ class WordDetailBottomSheetFragment(private val word: Word) : BaseBottomSheetVMF
 
         withLifecycleScope(isWidget){
             binding.ivWidget.setImageResource(if (it) R.drawable.ic_widget_pressed_black else R.drawable.ic_widget_default )
+        }
+
+        withLifecycleScope(errorAddingWidget){
+            Toast.makeText(requireContext(), getString(R.string.error_max_adding_count), Toast.LENGTH_LONG).show()
         }
     }
 
