@@ -9,6 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 class GetWordsUC(private val repo: MainRepo): BaseUseCase<List<Word>, BaseUseCase.None>() {
     override suspend fun run(params: None): Flow<Either<Failure, List<Word>>> {
-        return repo.fetchWords()
+        return repo.getWords()
     }
 }

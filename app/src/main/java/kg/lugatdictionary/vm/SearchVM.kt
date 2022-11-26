@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.viewModelScope
 import kg.lugatdictionary.domain.entities.Word
 import kg.lugatdictionary.domain.usecases.GetWordsBySearchUC
+import kg.lugatdictionary.domain.usecases.GetWordsUC
 import kg.lugatdictionary.domain.usecases.InsertHistoryUC
 import kg.lugatdictionary.domain.utils.BaseUseCase
 import kg.lugatdictionary.vm.utils.base.BaseVM
@@ -13,6 +14,7 @@ import kotlinx.coroutines.flow.StateFlow
 
 class SearchVM(
     private val getWordsBySearchUC: GetWordsBySearchUC,
+    private val getWordsUC: GetWordsUC,
     private val insertHistoryUC: InsertHistoryUC
 ) : BaseVM() {
 
@@ -30,6 +32,9 @@ class SearchVM(
         }
     }
 
+    fun getWords(){
+        getWordsUC
+    }
     fun insertHistory(word: Word){
         insertHistoryUC(word, viewModelScope){
             it.collectResponse(_insertedHistory)

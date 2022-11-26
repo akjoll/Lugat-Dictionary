@@ -21,9 +21,9 @@ class LaunchActivity: BaseActivity<ActivityLauncherBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        initObservers()
-        initRequests()
+        startMainActivity()
+        //initObservers()
+        //initRequests()
     }
 
     private fun initRequests() = with(viewModel) {
