@@ -9,7 +9,8 @@ import kg.lugatdictionary.data.memory.db.entities.HistoryLocal
 import kg.lugatdictionary.data.memory.db.entities.WidgetLocal
 import kg.lugatdictionary.data.memory.db.entities.WordLocal
 
-@Database(entities = [FavoriteLocal::class, HistoryLocal::class, WidgetLocal::class, WordLocal::class], version = 1)
+@Database(entities = [FavoriteLocal::class, HistoryLocal::class, WidgetLocal::class, WordLocal::class],
+    version = 1, exportSchema = true)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun lugatDao(): LugatDictDao

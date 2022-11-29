@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { MainVM() }
-    viewModel { SearchVM(get(), get()) }
+    viewModel { SearchVM(get(), get(),get()) }
     viewModel { LaunchVM(get(), get()) }
     viewModel { WidgetVM(get(), get()) }
     viewModel { FavoriteVM(get(), get()) }

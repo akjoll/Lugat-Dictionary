@@ -7,7 +7,7 @@ import kg.lugatdictionary.domain.entities.Word
 
 @Entity(tableName = WordLocalTableName)
 data class WordLocal(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id: Long,
     val word: String,
     val explanation: String

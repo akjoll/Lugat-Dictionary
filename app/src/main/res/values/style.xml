@@ -72,14 +72,4 @@
         <item name="backgroundTint">@color/ebony_clay</item>
     </style>
 
-    <style name="FullScreenDialog3" parent="Theme.LugatDictionary.Light">
-        <item name="background">@android:color/transparent</item>
-        <item name="colorPrimary">?colorPrimary</item>
-        <item name="android:statusBarColor">@color/blue</item>
-        <item name="colorAccent">?colorAccent</item>
-        <item name="colorPrimaryDark">?colorPrimaryDark</item>
-        <item name="android:windowMinWidthMajor">100%</item>
-        <item name="android:windowMinWidthMinor">100%</item>
-    </style>
-
 </resources>

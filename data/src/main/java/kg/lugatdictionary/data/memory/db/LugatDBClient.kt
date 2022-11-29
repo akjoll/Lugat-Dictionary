@@ -8,7 +8,7 @@ import kg.lugatdictionary.data.utils.LugatDatabaseName
 
 fun provideAppDatabase(context: Context) = Room
     .databaseBuilder(context, AppDatabase::class.java, LugatDatabaseName)
-    .createFromAsset("lugatDB.db")
+    .createFromAsset("lugat_DB.db")
     .build()
 
 fun provideLugatDictDao(appDatabase: AppDatabase): LugatDictDao = appDatabase.lugatDao()

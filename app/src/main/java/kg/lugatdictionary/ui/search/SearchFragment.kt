@@ -28,6 +28,7 @@ class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordLis
     private val adapter by lazy { SearchAdapter(this) }
 
     override fun init() {
+        initRequests()
         initRV()
         initListeners()
         initObservers()
@@ -50,6 +51,10 @@ class SearchFragment: BaseVMFragment<FragmentSearchBinding, SearchVM>(), WordLis
         withLifecycleScope(searchResponse) {
             adapter.setData(it)
         }
+
+    }
+    private fun initRequests(){
+        viewModel.getWords()
     }
 
     private fun initListeners() = with(binding) {

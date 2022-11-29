@@ -7,8 +7,5 @@
     <string name="widget">Виджет</string>
     <string name="history">Тарых</string>
     <string name="limited_number_word">Сиз 4 гана сөз кошо аласыз</string>
-    <string name="appwidget_text">EXAMPLE</string>
-    <string name="add_widget">Add widget</string>
-    <string name="app_widget_description">This is an app widget description</string>
     <string name="error_max_adding_count">Сиз эн коп 4 соз кошо аласыз</string>
 </resources>

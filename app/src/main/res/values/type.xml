@@ -46,11 +46,6 @@
         <item name="fontFamily">@font/inter_medium</item>
     </style>
 
-    <style name="TextAppearance.MaterialComponents.Button.LugatDictionary">
-        <item name="android:textSize">17sp</item>
-        <item name="fontFamily">@font/inter_semibold</item>
-    </style>
-
     <style name="TextAppearance.MaterialComponents.Caption.LugatDictionary">
         <item name="android:textSize">11sp</item>
         <item name="fontFamily">@font/inter_regular</item>
