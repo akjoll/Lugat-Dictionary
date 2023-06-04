@@ -15,6 +15,7 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -33,6 +34,12 @@ android {
 
     buildFeatures {
         viewBinding true
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.1.0-beta03"
+        // 1.5.31 kotlin version and 1.1.1 compose version -> nado vynesti ih
+        kotlinCompilerExtensionVersion "1.1.1"
     }
 }
 
@@ -91,4 +98,9 @@ dependencies {
     // paging
     implementation "androidx.paging:paging-runtime-ktx:3.1.1"
 
+    //lottie
+    def lottieVersion = "5.0.3"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation("androidx.glance:glance-appwidget:1.0.0-alpha03")
 }

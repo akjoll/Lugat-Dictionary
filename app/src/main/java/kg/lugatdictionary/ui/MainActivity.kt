@@ -10,9 +10,9 @@ import kg.lugatdictionary.R
 import kg.lugatdictionary.databinding.ActivityMainBinding
 import kg.lugatdictionary.ui.utils.Loadable
 import kg.lugatdictionary.ui.utils.base.BaseActivity
+import kg.lugatdictionary.ui.utils.extensions.fragmentsToHideBottomNavOn
 import kg.lugatdictionary.vm.MainVM
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
 
@@ -24,10 +24,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
         ) as NavHostFragment
     }
 
-
     private val listener =
         NavController.OnDestinationChangedListener { _, dest, _ ->
-
+            binding.bottomNav.isVisible = !fragmentsToHideBottomNavOn.contains(dest.id)
         }
 
     override fun inflateBinding(inflater: LayoutInflater): ActivityMainBinding {
@@ -48,7 +47,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>(), Loadable {
     private fun initListeners() {
 
     }
-
 
     private fun setupNavigation() {
         NavigationUI.setupWithNavController(

@@ -1,5 +1,9 @@
 package kg.lugatdictionary.ui.utils.extensions
 
+import android.app.Activity
+import android.appwidget.AppWidgetManager
+import android.content.ComponentName
+import android.content.Intent
 import android.view.View
 import androidx.activity.addCallback
 import androidx.annotation.StringRes
@@ -9,6 +13,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.snackbar.Snackbar
+import kg.lugatdictionary.LugatWidget
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 
@@ -62,12 +69,23 @@ fun <T> Fragment.setNavigationResult(
     )
 }
 
-fun Fragment.withLifecycleScope(fn: suspend () -> Unit){
+fun <T> Fragment.withLifecycleScope(flow: Flow<T>, fn: suspend (T) -> Unit){
     viewLifecycleOwner.lifecycleScope.launch {
         viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.STARTED){
-            fn.invoke()
+            flow.collect {
+                fn.invoke(it)
+            }
         }
     }
+}
+
+fun Fragment.updateAppWidget(){
+    val componentName = ComponentName(requireContext(), LugatWidget::class.java)
+    val intent = Intent(context, LugatWidget::class.java)
+    intent.action = AppWidgetManager.ACTION_APPWIDGET_UPDATE
+    val ids = AppWidgetManager.getInstance(requireContext()).getAppWidgetIds(componentName)
+    intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, ids)
+    activity?.sendBroadcast(intent)
 }
 
 

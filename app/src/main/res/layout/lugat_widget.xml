@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.LugatDictionary.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:background="@color/gray"
+    android:padding="@dimen/dp_2x"
+    android:theme="@style/Theme.LugatDictionary.Light.AppWidgetContainer">
+
+    <TextView
+        android:id="@+id/tv_word1"
+        android:textColor="@color/white"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_explanation1"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_word1"
+        android:layout_marginTop="@dimen/dp_0.5x"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_word2"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_explanation1"
+        android:layout_marginTop="@dimen/dp_1x"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_explanation2"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_word2"
+        android:layout_marginTop="@dimen/dp_0.5x"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_word3"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_explanation2"
+        android:layout_marginTop="@dimen/dp_1x"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_explanation3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_word3"
+        android:layout_marginTop="@dimen/dp_0.5x"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1.LugatDictionary"
+        android:textColor="@color/white"
+        tools:text="@string/app_name" />
+
+    <TextView
+        android:id="@+id/tv_word4"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_explanation3"
+        android:layout_marginTop="@dimen/dp_1x"
+        android:maxLines="1"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5.LugatDictionary"
+        android:ellipsize="end"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_explanation4"
+        android:textColor="@color/white"
+        android:layout_below="@+id/tv_word4"
+        android:layout_marginTop="@dimen/dp_0.5x"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1.LugatDictionary"
+        tools:text="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

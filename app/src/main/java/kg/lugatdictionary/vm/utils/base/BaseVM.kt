@@ -1,11 +1,13 @@
 package kg.lugatdictionary.vm.utils.base
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import android.util.Log
+import androidx.lifecycle.*
+import kg.lugatdictionary.domain.utils.Either
 import kotlinx.coroutines.launch
 import kg.lugatdictionary.domain.utils.Failure
+import kg.lugatdictionary.domain.utils.onFailure
+import kg.lugatdictionary.domain.utils.onSuccess
+import kotlinx.coroutines.flow.*
 
 open class BaseVM : ViewModel() {
 
@@ -20,5 +22,19 @@ open class BaseVM : ViewModel() {
             fn()
             _loadingLD.value = false
         }
+    }
+
+    protected fun <T> Flow<Either<Failure, T>>.collectResponse( flowResult: MutableSharedFlow<T>, alsoOnSuccess: () -> Unit = { }){
+        viewModelScope.launch {
+            this@collectResponse.collect { result ->
+                result
+                    .onSuccess {
+                        viewModelScope.launch { flowResult.emit(it)}
+                        alsoOnSuccess.invoke()
+                    }
+                    .onFailure { _failureLD.value = it }
+            }
+        }
+
     }
 }

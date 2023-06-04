@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Лугат создугу</string>
+    <string name="app_name">Түркчө-Кыргызча Лугат</string>
     <string name="no_internet">Интернет жок</string>
     <string name="server_error">Серверде ката чыкты</string>
-    <string name="search">Поиск</string>
-    <string name="favourite">Избранные</string>
+    <string name="search">Издөө</string>
+    <string name="favourite">Тандалмалар</string>
     <string name="widget">Виджет</string>
-    <string name="history">История</string>
+    <string name="history">Тарых</string>
+    <string name="limited_number_word">Сиз 4 гана сөз кошо аласыз</string>
+    <string name="error_max_adding_count">Сиз эн коп 4 соз кошо аласыз</string>
 </resources>

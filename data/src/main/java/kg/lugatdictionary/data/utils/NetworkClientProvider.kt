@@ -4,7 +4,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kg.lugatdictionary.data.memory.LugatSharedPreferences
+import kg.lugatdictionary.data.memory.preferences.LugatSharedPreferences
 import java.util.concurrent.TimeUnit
 
 fun <T> provideNetworkService(

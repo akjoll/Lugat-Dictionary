@@ -2,14 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <include
+        android:id="@+id/incl_toolbar"
+        layout="@layout/layout_main_toolbar"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_favorite_words"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/words_bg"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textSize="35sp"
-        android:text="FavouriteFragment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintTop_toBottomOf="@id/incl_toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="@dimen/dp_2.5x"
+        android:layout_marginTop="@dimen/dp_1.25x"
+        tools:listitem="@layout/item_favorite"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+    </androidx.recyclerview.widget.RecyclerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

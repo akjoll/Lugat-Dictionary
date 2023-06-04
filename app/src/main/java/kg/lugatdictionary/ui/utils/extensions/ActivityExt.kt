@@ -6,6 +6,7 @@ import android.net.Uri
 import android.view.View
 import androidx.annotation.StringRes
 import com.google.android.material.snackbar.Snackbar
+import kg.lugatdictionary.R
 
 val fragmentsToHideBottomNavOn = hashSetOf(
     -1
